@@ -518,11 +518,17 @@ db.close()
 Step 6: Run the System
 Ensure the .h5 model file and labels.txt are in the same directory as the Python script.
 Run the script:
+
+
 <img width="866" alt="image" src="https://github.com/user-attachments/assets/ae02744d-ad50-4d69-888c-a11f4b157610" />
 
 
 finally output:
+
+
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/b8ddd6a8-368a-4329-b80a-8cbb6d44539b" />
+
+
 
 Conclusion
 
