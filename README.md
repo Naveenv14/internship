@@ -3,47 +3,58 @@ TITLE: Face Recognition System
 Step 1: Setting Up Google Teachable Machine
 
 Go to the Google Teachable Machine website.
+
 <img width="508" alt="image" src="https://github.com/user-attachments/assets/2b5a7598-a959-4c5a-bb2f-496365144b20" />
+
 Select the Image Project option
+
 <img width="840" alt="image" src="https://github.com/user-attachments/assets/25cf4d96-8cc4-46cf-803b-139553f4a758" />
+
 Choose the Standard Image Model or Face Recognition (depending on your goal).
+
 Create classes by capturing images of faces for each class (e.g., different individuals).
+
 <img width="697" alt="image" src="https://github.com/user-attachments/assets/7a8877e4-89fb-483b-8d69-64b51d4b2b5d" />
+
 <img width="286" alt="image" src="https://github.com/user-attachments/assets/fd0696e3-9941-4cb2-a56b-8ff340ca2208" />
+
 <img width="728" alt="image" src="https://github.com/user-attachments/assets/ef8cdd9f-5084-4287-8729-78f3efe12b29" />
 
 Step 2: Exporting the Trained Model
 
 After training, click on the Export Model button.
+
 <img width="570" alt="image" src="https://github.com/user-attachments/assets/977ad975-a4ac-48fc-8ffb-17a5611c181f" />
+
 Select the TensorFlow option.
+
 Download the Keras .h5 model file by clicking on the appropriate export link.
+
 <img width="539" alt="image" src="https://github.com/user-attachments/assets/66402460-5fa8-4ce1-b8b8-712c26a54e7a" />
 
 Step 3: Setting Up the Python Environment
 
 Install Python (if not already installed) by downloading it from python.org. Ensure Python 3.7+ is installed.
+
 Install a code editor like VS Code or PyCharm for coding.
+
 Open a terminal and create a virtual environment:
-bash
-Copy code
+
+
 python -m venv face_rec_env
+
 Activate the virtual environment:
 On Windows:
-bash
-Copy code
+
 face_rec_env\Scripts\activate
 On Mac/Linux:
-bash
-Copy code
+
 source face_rec_env/bin/activate
 
 Step 4: Installing Required Libraries
 
 Run the following commands in the terminal to install the necessary libraries:
 
-bash
-Copy code
 pip install tensorflow
 pip install numpy
 pip install opencv-python
@@ -55,7 +66,7 @@ Step 5: Loading the Exported Model
 Place the .h5 model file downloaded from Teachable Machine in your project directory.
 Create a Python script (e.g., face_recognition.py) and add the following code to load the model:
 python
-Copy code
+
 import tensorflow as tf
 
 # Load the Teachable Machine Keras model
@@ -66,7 +77,7 @@ Step 6: Capturing and Preprocessing Images
 
 Use OpenCV to capture images from your webcam:
 python
-Copy code
+
 import cv2
 
 # Open the webcam
@@ -88,42 +99,41 @@ This code snippet uses the OpenCV library to capture video from a webcam and dis
 
 Code Breakdown and Description
 1. Import OpenCV Library
-python
-Copy code
+
 import cv2
 The cv2 module is imported to use OpenCV, a library for computer vision tasks such as image processing, video capture, and manipulation.
+
 2. Open the Webcam
-python
-Copy code
+
 cap = cv2.VideoCapture(0)
 cv2.VideoCapture(0): Opens the default webcam (device index 0). If you have multiple cameras, you can change the index (e.g., 1 for a second camera).
 The cap object is used to interact with the webcam for capturing video frames.
+
 3. Infinite Loop to Capture Frames
-python
-Copy code
+
 while True:
     ret, frame = cap.read()
 cap.read(): Captures the current frame from the webcam.
 ret: A boolean value indicating whether the frame was successfully captured (True or False).
 frame: The actual frame captured, represented as a NumPy array.
 The loop ensures continuous video capture until stopped.
+
 4. Display the Webcam Feed
-python
-Copy code
+
 cv2.imshow('Webcam', frame)
 cv2.imshow(): Displays the captured frame in a window titled "Webcam".
 The frame is shown in real-time as a video stream.
+
 5. Exit Condition
-python
-Copy code
+
 if cv2.waitKey(1) & 0xFF == ord('q'):
     break
 cv2.waitKey(1): Waits for 1 millisecond for a key press.
 If the user presses the 'q' key, the condition becomes True, and the loop exits.
 The ord('q') converts the character 'q' into its ASCII code for comparison.
+
 6. Release Resources
-python
-Copy code
+
 cap.release()
 cv2.destroyAllWindows()
 cap.release(): Releases the webcam resource so it can be used by other applications.
@@ -204,7 +214,9 @@ while True:
 
 camera.release()
 cv2.destroyAllWindows()
+
  DESCRIPTION OF ABOVE CODE:
+ 
  Imports Libraries: Loads necessary libraries (keras, cv2, numpy) for machine learning and computer vision tasks.
 
 Load Model and Labels:
@@ -240,50 +252,52 @@ Select the Image Project option.
 Choose the Standard Image Model or Face Recognition (depending on your goal).
 Create classes by capturing images of faces for each class (e.g., different individuals).
 Train the model by clicking the Train Model button.
+
 Step 2: Exporting the Trained Model
+
 After training, click on the Export Model button.
 Select the TensorFlow option.
 Download the Keras .h5 model file by clicking on the appropriate export link.
+
 Step 3: Setting Up the Python Environment
+
 Install Python (if not already installed) by downloading it from python.org. Ensure Python 3.7+ is installed.
 Install a code editor like VS Code or PyCharm for coding.
 Open a terminal and create a virtual environment:
-bash
-Copy code
+
 python -m venv face_rec_env
 Activate the virtual environment:
 On Windows:
-bash
-Copy code
+
 face_rec_env\Scripts\activate
 On Mac/Linux:
-bash
-Copy code
-source face_rec_env/bin/activate
-Step 4: Installing Required Libraries
-Run the following commands in the terminal to install the necessary libraries:
 
-bash
-Copy code
+source face_rec_env/bin/activate
+
+Step 4: Installing Required Libraries
+
+Run the following commands in the terminal to install the necessary libraries:
 pip install tensorflow
 pip install numpy
 pip install opencv-python
 pip install matplotlib
 pip install pillow
+
 Step 5: Loading the Exported Model
+
 Place the .h5 model file downloaded from Teachable Machine in your project directory.
 Create a Python script (e.g., face_recognition.py) and add the following code to load the model:
-python
-Copy code
+
 import tensorflow as tf
 
 # Load the Teachable Machine Keras model
 model = tf.keras.models.load_model('model.h5')
 print("Model loaded successfully!")
+
 Step 6: Capturing and Preprocessing Images
+
 Use OpenCV to capture images from your webcam:
-python
-Copy code
+
 import cv2
 
 # Open the webcam
@@ -300,11 +314,12 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 Preprocess the images to match the input shape of the Teachable Machine model. Typically, resize them to the required size (e.g., 224x224 pixels).
+
 Step 7: Making Predictions
+
 Add the following code to preprocess the image and make predictions:
 
-python
-Copy code
+
 import numpy as np
 from PIL import Image
 
@@ -340,8 +355,11 @@ cap.release()
 cv2.destroyAllWindows()
 Step 8: Testing and Finalizing:
 run the code 
+
 output:
-![Uploading image.png…]()
+
+<img width="810" alt="image" src="https://github.com/user-attachments/assets/711d894d-2ca1-4c8f-b6da-d2a0ace059e8" />
+
 
 
 
