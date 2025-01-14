@@ -365,10 +365,25 @@ output:
 
 
 
+
 TASK2:
 
 
 TITLE: OFFICE ATTENDENCE SYSTEM
+
+Step 1: Set Up Google Teachable Machine
+
+1.Open Teachable Machine:
+
+<img width="508" alt="image" src="https://github.com/user-attachments/assets/2b5a7598-a959-4c5a-bb2f-496365144b20" />
+
+Visit Teachable Machine.
+Select Image Project and then choose the Face Recognition model.
+
+Select the Image Project option
+
+<img width="840" alt="image" src="https://github.com/user-attachments/assets/25cf4d96-8cc4-46cf-803b-139553f4a758" />
+
 
 
 
