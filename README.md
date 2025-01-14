@@ -1,5 +1,7 @@
 TITLE: Face Recognition System
+
 Step 1: Setting Up Google Teachable Machine
+
 Go to the Google Teachable Machine website.
 <img width="508" alt="image" src="https://github.com/user-attachments/assets/2b5a7598-a959-4c5a-bb2f-496365144b20" />
 Select the Image Project option
@@ -9,13 +11,17 @@ Create classes by capturing images of faces for each class (e.g., different indi
 <img width="697" alt="image" src="https://github.com/user-attachments/assets/7a8877e4-89fb-483b-8d69-64b51d4b2b5d" />
 <img width="286" alt="image" src="https://github.com/user-attachments/assets/fd0696e3-9941-4cb2-a56b-8ff340ca2208" />
 <img width="728" alt="image" src="https://github.com/user-attachments/assets/ef8cdd9f-5084-4287-8729-78f3efe12b29" />
+
 Step 2: Exporting the Trained Model
+
 After training, click on the Export Model button.
 <img width="570" alt="image" src="https://github.com/user-attachments/assets/977ad975-a4ac-48fc-8ffb-17a5611c181f" />
 Select the TensorFlow option.
 Download the Keras .h5 model file by clicking on the appropriate export link.
 <img width="539" alt="image" src="https://github.com/user-attachments/assets/66402460-5fa8-4ce1-b8b8-712c26a54e7a" />
+
 Step 3: Setting Up the Python Environment
+
 Install Python (if not already installed) by downloading it from python.org. Ensure Python 3.7+ is installed.
 Install a code editor like VS Code or PyCharm for coding.
 Open a terminal and create a virtual environment:
@@ -31,7 +37,9 @@ On Mac/Linux:
 bash
 Copy code
 source face_rec_env/bin/activate
+
 Step 4: Installing Required Libraries
+
 Run the following commands in the terminal to install the necessary libraries:
 
 bash
@@ -41,7 +49,9 @@ pip install numpy
 pip install opencv-python
 pip install matplotlib
 pip install pillow
+
 Step 5: Loading the Exported Model
+
 Place the .h5 model file downloaded from Teachable Machine in your project directory.
 Create a Python script (e.g., face_recognition.py) and add the following code to load the model:
 python
@@ -51,7 +61,9 @@ import tensorflow as tf
 # Load the Teachable Machine Keras model
 model = tf.keras.models.load_model('model.h5')
 print("Model loaded successfully!")
+
 Step 6: Capturing and Preprocessing Images
+
 Use OpenCV to capture images from your webcam:
 python
 Copy code
@@ -123,7 +135,9 @@ Allows the user to press the 'q' key to stop the video and close the window.
 Potential Applications
 Testing Webcam Functionality: Check if the webcam is working.
 Base Code for Vision Projects: This is a foundational script for real-time video processing, such as object detection or face recognition.
+
 Step 7: Making Predictions
+
 Add the following code to preprocess the image and make predictions:
 
 python code for face recognition:
